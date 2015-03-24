@@ -1,0 +1,620 @@
+@font-face {
+	font-family: "Roboto";
+	src: url('../fonts/roboto/Roboto-Light-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/Roboto-Light-webfont.svg#Roboto') format('svg');
+    font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url('../fonts/roboto/Roboto-Regular-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Regular-webfont.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/Roboto-Regular-webfont.svg#Roboto') format('svg');
+    font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url('../fonts/roboto/Roboto-Italic-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Italic-webfont.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/Roboto-Italic-webfont.svg#Roboto') format('svg');
+    font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url('../fonts/roboto/Roboto-Bold-webfont.eot');
+    src: url('../fonts/roboto/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-Bold-webfont.woff') format('woff'),
+         url('../fonts/roboto/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/Roboto-Bold-webfont.svg#Roboto') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url('../fonts/roboto/Roboto-BoldItalic-webfont.eot');
+    src: url('../fonts/roboto/Roboto-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto/Roboto-BoldItalic-webfont.woff') format('woff'),
+         url('../fonts/roboto/Roboto-BoldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/roboto/Roboto-BoldItalic-webfont.svg#Roboto') format('svg');
+	font-weight: 700;
+	font-style: italic;
+}
+
+/*@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/roboto/roboto-light.ttf);
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/roboto/roboto-regular.ttf);
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/roboto/roboto-medium.ttf);
+  font-weight: 500; }*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+/* Override Bootstrap */
+
+ul, ol {
+	margin: 0;
+	list-style: none;
+}
+
+.btn:active {
+	box-shadow: none;
+}
+
+a {
+	color: #000;
+}
+
+/* End override Bootstrap */
+
+body, html {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background: #FFF;
+	color: #000;
+	font-size: 10px;
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+	position: absolute;
+	z-index: 1;
+	left: 5%;
+	top: 5%;
+}
+
+header h1 {
+	font-size: 0;
+	background: url("../images/logo_short_white.png") no-repeat top left;
+	background-size: auto 100%;
+	width: 250px;
+	height: 48px;
+	margin: 0;
+}
+
+body.page-homepage header h1 {
+	background-image: url("../images/logo_gray.png");
+}
+
+footer {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+#kzman {
+	position: absolute;
+	left: 50%;
+	width: 150px;
+	margin-left: -75px;
+	height: 15%;
+	text-align: center;
+}
+
+#kzman > div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: no-repeat center;
+	background-size: contain;
+}
+
+#kzman > div.triangle {
+	visibility: hidden;
+	background-image: url("../images/kzman_triangle.svg");
+}
+
+#kzman > div.round {
+	background-image: url("../images/kzman_round.svg");
+}
+
+body.page-homepage #kzman > div.triangle {
+	visibility: visible;
+}
+body.page-homepage #kzman > div.round {
+	visibility: hidden;
+}
+
+#kzman {
+	bottom: 8%;
+}
+
+.btn-pagination {
+	position: absolute;
+	left: 50%;
+	font-size: 5rem;
+	height: 3%;
+	width: 100px;
+	margin-left: -50px;
+	line-height: 0;
+	background: no-repeat center;
+	background-size: auto 100%;
+}
+
+.btn-pagination.down {
+	bottom: 3%;
+	background-image: url("../images/arrow_bottom.png");
+}
+
+body.page-footer .btn-pagination.down {
+	display: none;
+}
+
+#dots {
+	position: absolute;
+	right: 2%;
+	top: 5%;
+}
+
+#dots li {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: #CBCDCE;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+body.page-kit #dots li {
+	background: #B4B6B8
+}
+#dots li:first-child {
+	margin-top: 0;
+}
+#dots li.active {
+	background: #888A8D;
+}
+body.page-kit #dots li.active {
+	background: #FFF
+}
+
+#pages {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	cursor: hand;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+#pages.initializing {
+	visibility: hidden;
+}
+
+#pages .page {
+	position: relative;
+}
+
+#pages .page .cols {
+	position: absolute;
+	bottom: 23%;
+}
+
+#pages .page .cols.count-2 .col-text {
+	padding-left: 90px;
+}
+
+#pages .page .cols.count-2 .col-text > .inner {
+	max-width: 500px;
+	margin-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+	#pages .page .cols.count-2 .col-text p.lead {
+		padding-bottom: 60px;
+		background: url("../images/quote_bottom_gray.png") no-repeat left bottom;
+	}
+}
+
+/*#pages p.emphasis {
+	font-size: 2rem;
+}*/
+
+#btn-cta {
+	padding: 15px 70px;
+	border-radius: 30px;
+	color: #FFF;
+	font-size: 2rem;
+	background: #74378D;
+	text-transform: lowercase;
+	position: absolute;
+	bottom: 23%;
+	margin-bottom: -60px;
+	left: 50%;
+	margin-left: 90px;
+}
+
+
+/* Home */
+
+#pages .page-homepage {
+	background: #FFF;
+}
+
+#pages .page-homepage .cols {
+	width: 100%;
+}
+
+#pages .page-homepage .col-img {
+	position: static;
+}
+
+#pages .page-homepage .col-img img {
+	position: absolute;
+	bottom: 0;
+	right: 50%;
+}
+
+
+/* How To */
+
+#pages .page-howto {
+	background: #32AC41;
+	color: #FFF;
+}
+
+#pages .page-howto .cols {
+	width: 80%;
+	margin: auto 10%;
+}
+
+#pages .page-howto .col > .img {
+	position: absolute;
+	bottom: 100%;
+	left: 15px;
+	right: 15px;
+}
+
+#pages .page-howto .col > .img > img {
+	width: 80%;
+	height: auto;
+}
+
+#pages .page-howto .col:nth-child(2) > .img {
+	bottom: 80%;
+}
+
+#pages .page-howto .col:last-child > .img > img {
+	width: 100%;
+}
+
+#pages .page-howto .col h2 {
+	position: relative;
+}
+
+#pages .page-howto .col p {
+	margin-bottom: 60px;
+}
+
+/* Kit */
+
+#pages .page-kit {
+	background: #CBCDCE;
+}
+
+#pages .page-kit .cols {
+	width: 100%;
+	bottom: 25%;
+}
+
+#pages .page-kit .col-modules {
+	text-align: right;
+}
+
+#pages .page-kit .modules {
+	display: inline-block;
+	width: 100%;
+	max-width: 500px;
+}
+
+#pages .page-kit .modules li {
+	display: block;
+	float: left;
+	width: 26%;
+	height: 100px;
+	margin-left: 11%;
+	margin-bottom: 34px;
+	cursor: pointer;
+}
+
+#pages .page-kit .modules li .info {
+	display: none;
+}
+
+#pages .page-kit .modules li:nth-child(5) {
+	visibility: hidden;
+}
+
+#pages .page-kit .modules li:nth-child(3n+1) {
+	clear: both;
+	margin-left: 0;
+}
+
+#pages .page-kit .modules li:nth-child(1n+7) {
+	margin-bottom: 0;
+}
+
+#pages .page-kit .module-info {
+	text-align: left;
+	position: absolute;
+	width: 100%;
+	max-width: 500px;
+	top: 100%;
+	right: 60px;
+	padding-left: 60px;
+}
+
+
+/* Footer */
+
+#pages .page-footer {
+	background: #EFF0F0;
+}
+
+#pages .page-footer .cols {
+	width: 100%;
+}
+
+#pages .page-footer .col-jobs {
+	color: #9D9FA3;
+}
+
+#pages .page-footer .col-jobs li {
+	display: inline-block;
+	vertical-align: top;
+	width: 75px;
+	padding-top: 80px;
+	background: no-repeat top center;
+	text-align: center;
+	margin: 0 15px 40px 15px;
+	font-size: 1.6rem;
+	color: #B4B6B8;
+}
+
+#pages .page-footer .col-jobs li.ecobalade {
+	background-image: url("../images/jobs/logo_ecobalade.png");
+}
+#pages .page-footer .col-jobs li.sauvages {
+	background-image: url("../images/jobs/logo_sauvages.png");
+}
+#pages .page-footer .col-jobs li.biolit {
+	background-image: url("../images/jobs/logo_biolit.png");
+}
+#pages .page-footer .col-jobs li.meol {
+	background-image: url("../images/jobs/logo_meol.png");
+}
+
+#pages .page-footer .col-jobs span.lead {
+	display: block;
+	margin-top: 0px;
+}
+
+#pages .page-footer .highlight {
+	color: #32AC41;
+}
+
+/* Modules */
+
+ul.modules {
+	background: url("../images/modules/basket_8.png") no-repeat center;
+}
+
+ul.modules li {
+	background: no-repeat center;
+	background-size: contain;
+}
+
+ul.modules li[name=forms] {
+	background-image: url("../images/modules/module_forms_on.png");
+}
+
+ul.modules li[name=game] {
+	background-image: url("../images/modules/module_game_on.png");
+}
+
+ul.modules li[name=geoloc] {
+	background-image: url("../images/modules/module_geoloc_on.png");
+}
+
+ul.modules li[name=notification] {
+	background-image: url("../images/modules/module_notification_on.png");
+}
+
+ul.modules li[name=picture] {
+	background-image: url("../images/modules/module_picture_on.png");
+}
+
+ul.modules li[name=share] {
+	background-image: url("../images/modules/module_share_on.png");
+}
+
+ul.modules li[name=stat] {
+	background-image: url("../images/modules/module_stat_on.png");
+}
+
+ul.modules li[name=www] {
+	background-image: url("../images/modules/module_www_on.png");
+}
+
+
+/* Hight Desktop */
+@media (min-height: 900px) {
+	#kzman {
+		bottom: 13%;
+	}
+	#pages .page .cols {
+		bottom: 28%;
+	}
+	#pages .page-kit .cols {
+		bottom: 30%;
+	}
+	#btn-cta {
+		bottom: 28%;
+	}
+}
+
+
+/* Tablet Vertical */
+
+@media (max-width: 991px) {
+	#pages .page .cols.count-2 .col-text > .inner {
+		margin: auto;
+		margin-top: 50px;
+	}
+	
+	#pages .page-kit .cols.count-2 .col-text p.lead,
+	#pages .page-footer .cols.count-2 .col-text p.lead {
+		background-position: 60% bottom;
+	}
+
+	/* Kit */
+	#pages .page-kit .col-modules {
+		text-align: center;
+	}
+	#pages .page-kit .module-info {
+		position: static;
+		top: auto;
+		right: auto;
+		padding: 0;
+		max-width: 100%;
+		text-align: center;
+	}
+	#pages .page .cols.count-2 .col-text {
+		padding-left: 0;
+	}
+}
+
+
+/* Smartphones */
+
+@media (max-width: 767px) {
+
+	body, html {
+		position: static;
+		width: auto;
+		height: auto;
+		overflow: auto;
+		background: #EFF0F0;
+		text-align: center;
+	}
+	header {
+		left: 15px;
+		right: 15px;
+		top: 30px;
+	}
+	header h1 {
+		background-image: url("../images/logo_gray.png");
+		background-position: center;
+		width: 100%;
+	}
+
+	footer {
+		position: static;
+	}
+
+	#btn-cta {
+		position: static;
+		margin: 0 0 30%;
+	}
+
+	#pages {
+		position: static;
+		width: 100%;
+		height: auto;
+	}
+
+	#pages .page .cols {
+		position: static;
+		bottom: auto;
+		padding-top: 50px;
+	}
+
+	#pages .page p.lead {
+		margin-bottom: 60px;
+	}
+
+
+	#pages .page .cols.count-2 .col-text {
+		padding-left: 0;
+	}
+
+	/* Home */
+	#pages .page-homepage .cols {
+		padding-top: 100px;
+	}
+
+	#pages .page-homepage .col-img img {
+		position: static;
+		width: 100%;
+	}
+
+	/* Howto */
+	#pages .page-howto .col > .img {
+		position: static;
+	}
+
+	/* Kit */
+	#pages .page-kit .modules li {
+		margin-bottom: 0px;
+	}
+	#pages .page-kit .module-info h3 {
+		margin-top: 0;
+	}
+
+	/* Footer */
+	#pages .page-footer .col-text {
+		margin-top: 40px;
+	}
+}
