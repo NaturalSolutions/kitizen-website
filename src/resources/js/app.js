@@ -38,11 +38,7 @@ kitizen.App = function(config)
 			direction: 'vertical',
 			keyboardNavigation: true,
 			afterInitialize: function() {
-				self.$pagesContainer.removeClass('initializing');
-				if ( !self.config.firstSlide )
-					self.onPageChange();
-				else
-					self.dragend.scrollToPage(self.config.firstSlide);
+                self.onDragendInit();
 			},
 			onSwipeEnd: function() {
 				self.onPageChange();
@@ -63,6 +59,41 @@ kitizen.App = function(config)
 			self.dragend.scrollToPage($me.index()+1);
 		});
 	};
+
+	self.onDragendInit = function()
+    {
+        self.$pagesContainer.removeClass('initializing');
+        if (!self.config.firstSlide)
+            self.onPageChange();
+        else
+            self.dragend.scrollToPage(self.config.firstSlide);
+
+        /*AdobeEdge.loadComposition('animation_homepage', 'EDGE-259079897', {
+            scaleToFit: "width",
+            centerStage: "both",
+            minW: "0px",
+            maxW: "undefined",
+            width: "596px",
+            height: "800px"
+        }, {
+            "dom": {}
+        }, {
+            "style": {
+                "${symbolSelector}": {
+                    "isStage": "true",
+                    "rect": ["undefined", "undefined", "600px", "800px"],
+                    "fill": ["rgba(255,255,255,1)"]
+                }
+            },
+            "dom": [{
+                "rect": ["0", "0", "600px", "800px", "auto", "auto"],
+                "id": "Poster",
+                "fill": ["rgba(0,0,0,0)", "images/Poster.png", "0px", "0px"],
+                "type": "image",
+                "tag": "img"
+            }]
+        });*/
+    };
 
 	self.onPageChange = function()
 	{

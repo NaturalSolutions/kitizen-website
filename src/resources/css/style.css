@@ -297,6 +297,29 @@ body.page-kit #dots li.active {
 	right: 50%;
 }
 
+#pages .page-homepage .anim-outer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 50%;
+}
+
+#pages .page-homepage .edgeLoad-EDGE-259079897 {
+	visibility: hidden;
+}
+
+/*#pages .page-homepage .anim-outer .flow-wrapper,*/
+#pages .page-homepage .anim-outer .center-wrapper {
+	width: 100% !important;
+	/*height: auto !important;*/
+}
+
+#Stage {
+	position: absolute !important;
+	right: 0 !important;
+}
+
 
 /* How To */
 
