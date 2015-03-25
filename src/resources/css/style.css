@@ -295,6 +295,11 @@ body.page-kit #dots li.active {
 	position: absolute;
 	bottom: 0;
 	right: 50%;
+	display: none;
+}
+
+html.mobile #pages .page-homepage .col-img img {
+	display: block;
 }
 
 #pages .page-homepage .anim-outer {
@@ -309,17 +314,15 @@ body.page-kit #dots li.active {
 	visibility: hidden;
 }
 
-/*#pages .page-homepage .anim-outer .flow-wrapper,*/
-#pages .page-homepage .anim-outer .center-wrapper {
-	width: 100% !important;
-	/*height: auto !important;*/
-}
-
 #Stage {
 	position: absolute !important;
-	right: 0 !important;
+	right: 50% !important;
+ 	bottom: -200px !important;
 }
 
+html.mobile #Stage {
+	display: none;
+}
 
 /* How To */
 

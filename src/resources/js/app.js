@@ -13,8 +13,8 @@ kitizen.App = function(config)
 		self.config = _.assign(self.config, config);
 
 		self.initElements();
-		var md = new MobileDetect(window.navigator.userAgent);
-		if ( !md.phone() ) {
+		self.md = new MobileDetect(window.navigator.userAgent);
+		if ( !self.md.phone() ) {
 			self.initDragend();
 			self.initNav();
 		};
@@ -51,6 +51,7 @@ kitizen.App = function(config)
 	self.initNav = function()
 	{
 		self.$arrowDown.click(function() {
+			//self.$pagesContainer.dragend('down');
 			self.$pagesContainer.dragend('up');
 		});
 
@@ -58,6 +59,9 @@ kitizen.App = function(config)
 			var $me = $(this);
 			self.dragend.scrollToPage($me.index()+1);
 		});
+
+		//TODO Mousewheel
+		// !!! Debounce it
 	};
 
 	self.onDragendInit = function()
@@ -68,31 +72,33 @@ kitizen.App = function(config)
         else
             self.dragend.scrollToPage(self.config.firstSlide);
 
-        /*AdobeEdge.loadComposition('animation_homepage', 'EDGE-259079897', {
-            scaleToFit: "width",
-            centerStage: "both",
-            minW: "0px",
-            maxW: "undefined",
-            width: "596px",
-            height: "800px"
-        }, {
-            "dom": {}
-        }, {
-            "style": {
-                "${symbolSelector}": {
-                    "isStage": "true",
-                    "rect": ["undefined", "undefined", "600px", "800px"],
-                    "fill": ["rgba(255,255,255,1)"]
-                }
-            },
-            "dom": [{
-                "rect": ["0", "0", "600px", "800px", "auto", "auto"],
-                "id": "Poster",
-                "fill": ["rgba(0,0,0,0)", "images/Poster.png", "0px", "0px"],
-                "type": "image",
-                "tag": "img"
-            }]
-        });*/
+        if ( !self.md.mobile() ) {
+			AdobeEdge.loadComposition('animation_homepage', 'EDGE-259079897', {
+			    scaleToFit: "none",
+			    centerStage: "none",
+			    minW: "0px",
+			    maxW: "undefined",
+			    width: "596px",
+			    height: "800px"
+			}, {
+			    "dom": {}
+			}, {
+			    "style": {
+			        "${symbolSelector}": {
+			            "isStage": "true",
+			            "rect": ["undefined", "undefined", "600px", "800px"],
+			            "fill": ["rgba(255,255,255,1)"]
+			        }
+			    },
+			    "dom": [{
+			        "rect": ["0", "0", "600px", "800px", "auto", "auto"],
+			        "id": "Poster",
+			        "fill": ["rgba(0,0,0,0)", "images/Poster.png", "0px", "0px"],
+			        "type": "image",
+			        "tag": "img"
+			    }]
+			});
+		};
     };
 
 	self.onPageChange = function()
