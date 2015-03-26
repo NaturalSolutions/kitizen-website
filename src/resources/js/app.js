@@ -61,7 +61,7 @@ kitizen.App = function(config)
 		});
 		//Add jquery mouseWheel
 		$('body').on('mousewheel',
-			_.debounce(
+			_.throttle(
 				function(event){
 					if (event.deltaY < 0){
 						self.$pagesContainer.dragend('up');
@@ -69,10 +69,7 @@ kitizen.App = function(config)
 						self.$pagesContainer.dragend('down');
 					}
 					self.positionY = event.deltaY;
-					//console.log(event.deltaX, event.deltaY, event.deltaFactor);
-				}
-				,
-				300)
+				},1000)
 			);
 	};
 
