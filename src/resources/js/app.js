@@ -59,9 +59,21 @@ kitizen.App = function(config)
 			var $me = $(this);
 			self.dragend.scrollToPage($me.index()+1);
 		});
-
-		//TODO Mousewheel
-		// !!! Debounce it
+		//Add jquery mouseWheel
+		$('body').on('mousewheel',
+			_.debounce(
+				function(event){
+					if (event.deltaY < 0){
+						self.$pagesContainer.dragend('up');
+					}else{
+						self.$pagesContainer.dragend('down');
+					}
+					self.positionY = event.deltaY;
+					//console.log(event.deltaX, event.deltaY, event.deltaFactor);
+				}
+				,
+				300)
+			);
 	};
 
 	self.onDragendInit = function()
