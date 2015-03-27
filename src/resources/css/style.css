@@ -244,7 +244,10 @@ body.page-kit #dots li.active {
 
 #pages .page .cols.count-2 .col-text {
 	padding-left: 90px !important;
-	 background-color: rgba(254,254,254,0.5);
+}
+
+#pages .page-homepage .page .col-text {
+	background-color: rgba(254,254,254,0.5);
 }
 
 #pages .page .cols.count-2 .col-text > .inner {
