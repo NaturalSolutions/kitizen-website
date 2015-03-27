@@ -243,7 +243,8 @@ body.page-kit #dots li.active {
 }
 
 #pages .page .cols.count-2 .col-text {
-	padding-left: 90px;
+	padding-left: 90px !important;
+	 background-color: rgba(254,254,254,0.5);
 }
 
 #pages .page .cols.count-2 .col-text > .inner {
@@ -317,7 +318,9 @@ html.mobile #pages .page-homepage .col-img img {
 #Stage {
 	position: absolute !important;
 	right: 50% !important;
- 	bottom: -200px !important;
+ 	bottom: -100px !important;
+ 	left:20px !important;
+ 	height:800px !important;
 }
 
 html.mobile #Stage {
