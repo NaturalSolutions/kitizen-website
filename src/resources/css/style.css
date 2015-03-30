@@ -321,7 +321,7 @@ html.mobile #pages .page-homepage .col-img img {
 #Stage {
 	position: absolute !important;
 	right: 50% !important;
- 	bottom: -100px !important;
+ 	bottom: -250px !important;
  	left:20px !important;
  	height:800px !important;
 }
@@ -534,6 +534,9 @@ ul.modules li[name=www] {
 	}
 	#btn-cta {
 		bottom: 28%;
+	}
+	#Stage {
+ 		bottom: -100px !important;
 	}
 }
 
