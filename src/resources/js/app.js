@@ -33,9 +33,11 @@ kitizen.App = function(config)
 	self.initDragend = function()
 	{
 		self.$pagesContainer.addClass('initializing');
+		var detect = !self.md.mobile() ? true : false;
 		self.$pagesContainer.dragend({
 			pageClass: 'page',
 			direction: 'vertical',
+			preventDrag: detect,
 			keyboardNavigation: true,
 			afterInitialize: function() {
                 self.onDragendInit();
