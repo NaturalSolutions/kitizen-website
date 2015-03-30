@@ -1,404 +1,426 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Kitizen</title>
-		<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/> 
-		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes"/>
 
-		<!-- favicon -->
-		<link rel="icon" type="image/x-icon" href="resources/images/icons/favicon.ico" />
-		<!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="resources/images/icons/favicon-32x32.png" /><![endif]-->
+<head>
+    <title>Kitizen</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="resources/images/icons/favicon.ico" />
+    <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="resources/images/icons/favicon-32x32.png" /><![endif]-->
+    <link rel="apple-touch-icon" sizes="57x57" href="resources/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="resources/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="resources/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="resources/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="resources/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="resources/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="resources/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="resources/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="resources/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Kitizen : un kit complet au service de votre projet">
+    <meta itemprop="description" content="Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif.">
+    <meta itemprop="image" content="http://www.kitizen.org/resources/images/poster_facebook.jpg">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Kitizen : un kit complet au service de votre projet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.kitizen.org" />
+    <meta property="og:image" content="http://www.kitizen.org/resources/images/poster_facebook.jpg" />
+    <meta property="og:description" content="Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif." />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Nat_Solutions" />
+    <meta name="twitter:title" content="Kitizen : un kit complet au service de votre projet" />
+    <meta name="twitter:description" content="Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif." />
+    <meta name="twitter:image" content="http://www.kitizen.org/resources/images/poster_facebook.jpg" />
+    <meta name="twitter:url" content="http://www.kitizen.org" />
+    <link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap-3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap-3.3.4/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+    <script type="text/javascript" src="resources/vendor/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/jquery.browser.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/lodash.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/lodash-deep.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/mobile-detect.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/dragend.js"></script>
+    <script type="text/javascript" src="resources/vendor/edge_includes/edge.5.0.1.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="resources/vendor/ns/jquery-ns.js"></script>
+    <script type="text/javascript" src="resources/vendor/ns/lodash-ns.js"></script>
+    <script type="text/javascript" src="resources/js/app.js"></script>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		<link rel="apple-touch-icon" sizes="57x57" href="resources/images/icons/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="resources/images/icons/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="resources/images/icons/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="resources/images/icons/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="resources/images/icons/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="resources/images/icons/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="resources/images/icons/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="resources/images/icons/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="resources/images/icons/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="resources/images/icons/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="resources/images/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="resources/images/icons/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="resources/images/icons/favicon-16x16.png">
-		<link rel="manifest" href="resources/images/icons/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="resources/images/icons/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
+    ga('create', 'UA-61250467-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
 
+<body>
+    <header>
+        <h1>Kitizen</h1>
+    </header>
+    <div id="pages">
+        <article name="homepage" class="page page-homepage">
+            <div class="cols container-fluid count-2">
+                <div class="col col-sm-6 col-img">
+                    <img src="resources/images/Poster.gif" />
+                    <!-- Animation -->
+                    <div id="Stage" class="EDGE-259079897">
+                        <div id="Stage_circle" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_petit_tronc" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_tronc2" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_vis2" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_1" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_5" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_3" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_2" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_4" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_7" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_6" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_route_9" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_2" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_3" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_1" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_4" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_5" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_building_1" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_building_2" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_foundation_1" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_foundation_2" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_foundation_3" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_foundation_4" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_car2" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_car2_car"></div>
+                        </div>
+                        <div id="Stage_arbre11" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_arbre11Copy" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_elonienne_1" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_elonienne_1_pales2">
+                                <div id="Stage_elonienne_1_pales2_pales"></div>
+                            </div>
+                            <div id="Stage_elonienne_1_pillier"></div>
+                        </div>
+                        <div id="Stage_eolienne_2" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_eolienne_2_pales_2"></div>
+                            <div id="Stage_eolienne_2_pillier_22"></div>
+                        </div>
+                        <div id="Stage_arbre_rond" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_tronc_rond" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_feuilles_rond" class="edgeLoad-EDGE-259079897"></div>
+                        </div>
+                        <div id="Stage_arbre_triangle" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_tronc_triangle" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_feuille_triangle" class="edgeLoad-EDGE-259079897"></div>
+                        </div>
+                        <div id="Stage_girafe" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_girafe_2" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafe_1" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafe_5" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafe_3" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafe_4" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3Copy" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3Copy2" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3Copy3" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3Copy4" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3Copy5" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis3Copy7" class="edgeLoad-EDGE-259079897"></div>
+                        </div>
+                        <div id="Stage_girafon" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_girafon_1" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafon_2" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafon_3" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafon_4" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_girafon_5" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis4" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis4Copy" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis4Copy2" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis4Copy3" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis4Copy4" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_vis4Copy5" class="edgeLoad-EDGE-259079897"></div>
+                        </div>
+                        <div id="Stage_building_3" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_foundation_5" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_foundation_6" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_illu1" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_10" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house_11" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_house-13" class="edgeLoad-EDGE-259079897"></div>
+                        <div id="Stage_buildings" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_fondation_102" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_fondation_102Copy2" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_fondation_102Copy" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_building_5" class="edgeLoad-EDGE-259079897"></div>
+                            <div id="Stage_building_4" class="edgeLoad-EDGE-259079897"></div>
+                        </div>
+                        <div id="Stage_Feuille__1" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__1_feuille1"></div>
+                        </div>
+                        <div id="Stage_Feuille__2" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__2_feuille2"></div>
+                        </div>
+                        <div id="Stage_Feuille__3" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__3_feuille3"></div>
+                        </div>
+                        <div id="Stage_Feuille__4" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__4_feuille4"></div>
+                        </div>
+                        <div id="Stage_Feuille__5" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__5_feuille5"></div>
+                        </div>
+                        <div id="Stage_Feuille__6" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__6_feuille6"></div>
+                        </div>
+                        <div id="Stage_Feuille__7" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__7_feuille7"></div>
+                        </div>
+                        <div id="Stage_Feuille__8" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__8_feuille8"></div>
+                        </div>
+                        <div id="Stage_Feuille__9" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__9_feuille9"></div>
+                        </div>
+                        <div id="Stage_Feuille__10" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__10_feuille10"></div>
+                        </div>
+                        <div id="Stage_Feuille__11" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__11_feuille11"></div>
+                        </div>
+                        <div id="Stage_Feuille__12" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__12_feuille12"></div>
+                        </div>
+                        <div id="Stage_Feuille__13" class="edgeLoad-EDGE-259079897">
+                            <div id="Stage_Feuille__13_feuille13"></div>
+                        </div>
+                    </div>
+                    <!-- -->
+                </div>
+                <div class="col col-sm-6 col-sm-offset-6 col-text">
+                    <div class="inner">
+                        <h2>Motivez votre environnement</h2>
+                        <p class="lead">
+                            Notre environnement est complexe et changeant, fédérez une communauté pour l’observer, le préserver, l’imaginer…
+                            <br/>
+                            <br/> Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article name="howto" class="page page-howto">
+            <div class="cols container-fluid count-3">
+                <section class="col col-sm-4">
+                    <div class="img">
+                        <img src="resources/images/how_1.svg" />
+                    </div>
+                    <h2>Assemblez</h2>
+                    <p class="lead">
+                        Sélectionnez les modules, configurez les connexions, créez votre plateforme idéale.
+                    </p>
+                </section>
+                <section class="col col-sm-4">
+                    <div class="img">
+                        <img src="resources/images/how_2.svg" />
+                    </div>
+                    <h2>Motivez</h2>
+                    <p class="lead">
+                        Trouvez les énergies nécessaires, animez une communauté et récompensez vos contributeurs.
+                    </p>
+                </section>
+                <section class="col col-sm-4">
+                    <div class="img">
+                        <img src="resources/images/how_3.svg" />
+                    </div>
+                    <h2>Récoltez</h2>
+                    <p class="lead">
+                        En un clin d’œil, visualisez et partagez vos données.
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article name="kit" class="page page-kit">
+            <div class="cols container-fluid count-2">
+                <div class="col col-md-5 col-md-offset-1 col-modules">
+                    <ul class="list-unstyled modules clearfix">
+                        <li name="forms">
+                            <div class="info">
+                                <h3>Formulaires de saisie</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li name="geoloc">
+                            <div class="info">
+                                <h3>Géolocalisation</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li name="picture">
+                            <div class="info">
+                                <h3>Prise de vue</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li name="share">
+                            <div class="info">
+                                <h3>Partage</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li></li>
+                        <li name="stat">
+                            <div class="info">
+                                <h3>Datavisualisation</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li name="game">
+                            <div class="info">
+                                <h3>Gamification</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li name="notification">
+                            <div class="info">
+                                <h3>Notifications</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                        <li name="www">
+                            <div class="info">
+                                <h3>Personalisation</h3>
+                                <p></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="module-info">
+                    </div>
+                </div>
+                <div class="col col-md-5 col-text">
+                    <div class="inner">
+                        <h2>Un kit complet au service de votre projet</h2>
+                        <p class="lead">
+                            Kitizen vous propose un ensemble de modules à combiner selon vos besoins pour construire votre projet participatif.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article name="footer" class="page page-footer">
+            <div class="cols container-fluid count-2">
+                <div class="col col-md-6 col-jobs text-center">
+                    <ul>
+                        <li class="ecobalade"><a href="http://www.ecoBalade.fr">Ecobalade</a></li>
+                        <li class="sauvages"><a href="http://www.sauvagesdepaca.fr">Sauvages</a></li>
+                        <li class="biolit"><a href="http://www.biolit.fr">Biolit</a></li>
+                        <li class="meol"><a href="http://www.natural-solutions.eu/biodiversity-game.fr">MEOL</a></li>
+                    </ul>
+                    <div>
+                        <span class="lead">Une réalisation de <a href="http://www.natural-solutions.eu">Natural Solutions</a></span>
+                    </div>
+                    <div class="text-center">
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        <div class="addthis_sharing_toolbox"></div>
+                    </div>
+                    <!-- Begin MailChimp Signup Form -->
+    				<div id="mc_embed_signup">
+                        <form action="//natural-solutions.us7.list-manage.com/subscribe/post?u=1a9b21fb9d9d31564dd16e46e&amp;id=aa971ee5cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <h2>Restez informé des évolutions et mises à jour de Kitizen</h2>
+                                <div class="mc-field-group">
+                                    <input type="email" value="votre adresse email" name="EMAIL" class="required email " id="mce-EMAIL">
+                                </div>
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_1a9b21fb9d9d31564dd16e46e_aa971ee5cb" tabindex="-1" value="">
+                                </div>
+                                <div class="clear">
+                                    <input type="submit" value="Envoyer" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                    <script type='text/javascript'>
+                    (function($) {
+                        window.fnames = new Array();
+                        window.ftypes = new Array();
+                        fnames[0] = 'EMAIL';
+                        ftypes[0] = 'email';
+                        fnames[1] = 'FNAME';
+                        ftypes[1] = 'text';
+                        fnames[2] = 'LNAME';
+                        ftypes[2] = 'text';
+                    }(jQuery));
+                    var $mcj = jQuery.noConflict(true);
+                    </script>
+                    <!--End mc_embed_signup-->
+                </div>
+                <div class="col col-md-5 col-text">
+                    <div class="inner">
+                        <p class="lead">
+                            Besoin d’aide ? Nous pouvons vous aider à concevoir et developper vos projets sur mesure. Contactez-nous et dites-nous comment nous pouvons vous aider.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer class="clearfix hidden-xs text-center">
+                © Natural Solutions 2015
+            </footer>
+            <!-- <a class="btn btn-cta" href="#">Nous contacter</a> -->
+        </article>
+    </div>
+    <a id="btn-cta" class="btn" href="mailto:contact@kitizen.org?subject=J'adore kitizen">Votre projet</a>
+    <aside id="dots" class="hidden-xs">
+        <ul class="list-unstyled">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </aside>
+    <div id="kzman" class="hidden-xs">
+        <div class="triangle"></div>
+        <div class="round"></div>
+    </div>
+    <div class="btn btn-pagination down hidden-xs"></div>
+    <footer class="clearfix visible-xs text-center">
+        © Natural Solutions 2015
+    </footer>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var app = new kitizen.App({
+            firstSlide: 0
+        });
+    });
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528b30ee78f93aee" async="async">
+    </script>
+</body>
 
-		<!-- Schema.org markup for Google+ -->
-		<meta itemprop="name" content="Kitizen : Un kit complet au service de votre projet">
-		<meta itemprop="description" content="Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif.">
-		<meta itemprop="image" content="http://www.kitizen.org/resources/images/poster_facebook.jpg">
-		<!-- Open Graph data -->
-		<meta property="og:title" content="Kitizen : Un kit complet au service de votre projet" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://www.kitizen.org" />
-		<meta property="og:image" content="http://www.kitizen.org/resources/images/poster_facebook.jpg" />
-		<meta property="og:description" content="Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif." />
-		<!-- Twitter Card data -->
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@Nat_Solutions" />
-		<meta name="twitter:title" content="Kitizen : Un kit complet au service de votre projet" />
-		<meta name="twitter:description" content="Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif." />
-		<meta name="twitter:image" content="http://www.kitizen.org/resources/images/poster_facebook.jpg" />
-		<meta name="twitter:url" content="http://www.kitizen.org" />
-		
-		<link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap-3.3.4/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap-3.3.4/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
-
-		<script type="text/javascript" src="resources/vendor/jquery-2.1.3.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/jquery.browser.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/lodash.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/lodash-deep.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/mobile-detect.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/dragend.js"></script>
-
-		<script type="text/javascript" src="resources/vendor/edge_includes/edge.5.0.1.min.js"></script>
-		<script type="text/javascript" src="resources/vendor/jquery.mousewheel.min.js"></script>
-
-		<script type="text/javascript" src="resources/vendor/ns/jquery-ns.js"></script>
-		<script type="text/javascript" src="resources/vendor/ns/lodash-ns.js"></script>
-		<script type="text/javascript" src="resources/js/app.js"></script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-61250467-1', 'auto');
-		  ga('send', 'pageview');
-		  
-
-		</script>
-
-	</head>
-
-	<body>
-
-		<header>
-			<h1>Kitizen</h1>
-		</header>
-
-		<div id="pages">
-			<article name="homepage" class="page page-homepage">
-				<div class="cols container-fluid count-2">
-					<div class="col col-sm-6 col-img">
-						<img src="resources/images/Poster.gif" />
-						<!-- Animation -->
-							<div id="Stage" class="EDGE-259079897">
-	
-						        <div id="Stage_circle" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_petit_tronc" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_tronc2" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_vis2" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_1" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_5" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_3" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_2" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_4" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_7" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_6" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_route_9" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_2" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_3" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_1" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_4" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_5" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_building_1" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_building_2" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_foundation_1" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_foundation_2" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_foundation_3" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_foundation_4" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_car2" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_car2_car"></div>
-						        </div>
-						        <div id="Stage_arbre11" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_arbre11Copy" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_elonienne_1" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_elonienne_1_pales2">
-						                <div id="Stage_elonienne_1_pales2_pales"></div>
-						            </div>
-						            <div id="Stage_elonienne_1_pillier"></div>
-						        </div>
-						        <div id="Stage_eolienne_2" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_eolienne_2_pales_2"></div>
-						            <div id="Stage_eolienne_2_pillier_22"></div>
-						        </div>
-						        <div id="Stage_arbre_rond" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_tronc_rond" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_feuilles_rond" class="edgeLoad-EDGE-259079897"></div>
-						        </div>
-						        <div id="Stage_arbre_triangle" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_tronc_triangle" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_feuille_triangle" class="edgeLoad-EDGE-259079897"></div>
-						        </div>
-						        <div id="Stage_girafe" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_girafe_2" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafe_1" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafe_5" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafe_3" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafe_4" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3Copy" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3Copy2" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3Copy3" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3Copy4" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3Copy5" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis3Copy7" class="edgeLoad-EDGE-259079897"></div>
-						        </div>
-						        <div id="Stage_girafon" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_girafon_1" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafon_2" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafon_3" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafon_4" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_girafon_5" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis4" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis4Copy" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis4Copy2" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis4Copy3" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis4Copy4" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_vis4Copy5" class="edgeLoad-EDGE-259079897"></div>
-						        </div>
-						        <div id="Stage_building_3" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_foundation_5" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_foundation_6" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_illu1" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_10" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house_11" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_house-13" class="edgeLoad-EDGE-259079897"></div>
-						        <div id="Stage_buildings" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_fondation_102" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_fondation_102Copy2" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_fondation_102Copy" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_building_5" class="edgeLoad-EDGE-259079897"></div>
-						            <div id="Stage_building_4" class="edgeLoad-EDGE-259079897"></div>
-						        </div>
-						        <div id="Stage_Feuille__1" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__1_feuille1"></div>
-						        </div>
-						        <div id="Stage_Feuille__2" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__2_feuille2"></div>
-						        </div>
-						        <div id="Stage_Feuille__3" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__3_feuille3"></div>
-						        </div>
-						        <div id="Stage_Feuille__4" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__4_feuille4"></div>
-						        </div>
-						        <div id="Stage_Feuille__5" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__5_feuille5"></div>
-						        </div>
-						        <div id="Stage_Feuille__6" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__6_feuille6"></div>
-						        </div>
-						        <div id="Stage_Feuille__7" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__7_feuille7"></div>
-						        </div>
-						        <div id="Stage_Feuille__8" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__8_feuille8"></div>
-						        </div>
-						        <div id="Stage_Feuille__9" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__9_feuille9"></div>
-						        </div>
-						        <div id="Stage_Feuille__10" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__10_feuille10"></div>
-						        </div>
-						        <div id="Stage_Feuille__11" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__11_feuille11"></div>
-						        </div>
-						        <div id="Stage_Feuille__12" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__12_feuille12"></div>
-						        </div>
-						        <div id="Stage_Feuille__13" class="edgeLoad-EDGE-259079897">
-						            <div id="Stage_Feuille__13_feuille13"></div>
-						        </div>
-						    </div>
-						<!-- -->
-					</div>
-
-
-					<div class="col col-sm-6 col-sm-offset-6 col-text">
-						<div class="inner">
-							<h2>Motivez votre environnement</h2>
-							<p class="lead">
-                                Notre environnement est complexe et changeant, fédérez une communauté pour l’observer, le préserver, l’imaginer…
-                                <br/><br/>
-                                Kitizen vous offre les outils pour créer, diffuser et réaliser simplement votre projet participatif.
-                             </p>
-						</div>
-					</div>
-				</div>
-			</article>
-			<article name="howto" class="page page-howto">
-				<div class="cols container-fluid count-3">
-					<section class="col col-sm-4">
-						<div class="img">
-							<img src="resources/images/how_1.svg" />
-						</div>
-						<h2>Assemblez</h2>
-						<p class="lead">
-                            Sélectionnez les modules, configurez les connexions, créez votre plateforme idéale.
-						</p>
-					</section>
-					<section class="col col-sm-4">
-						<div class="img">
-							<img src="resources/images/how_2.svg" />
-						</div>
-						<h2>Motivez</h2>
-						<p class="lead">
-                            Trouvez les énergies nécessaires, animez une communauté et récompensez vos contributeurs.
-						</p>
-					</section>
-					<section class="col col-sm-4">
-						<div class="img">
-							<img src="resources/images/how_3.svg" />
-						</div>
-						<h2>Récoltez</h2>
-						<p class="lead">
-                            En un clin d’œil, visualisez et partagez vos données.
-						</p>
-					</section>
-				</div>
-			</article>
-			<article name="kit" class="page page-kit">
-				<div class="cols container-fluid count-2">
-					<div class="col col-md-5 col-md-offset-1 col-modules">
-						<ul class="list-unstyled modules clearfix">
-							<li name="forms">
-								<div class="info">
-									<h3>Formulaires de saisie</h3>
-									<p></p>
-								</div>
-							</li>
-							<li name="geoloc">
-								<div class="info">
-									<h3>Géolocalisation</h3>
-									<p></p>
-								</div>
-							</li>
-							<li name="picture">
-								<div class="info">
-									<h3>Prise de vue</h3>
-									<p></p>
-								</div>
-							</li>
-							<li name="share">
-								<div class="info">
-									<h3>Partage</h3>
-									<p></p>
-								</div>
-							</li>
-							<li></li>
-							<li name="stat">
-								<div class="info">
-									<h3>Datavisualisation</h3>
-									<p></p>
-								</div>
-							</li>
-							<li name="game">
-								<div class="info">
-									<h3>Gamification</h3>
-									<p></p>
-								</div>
-							</li>
-							<li name="notification">
-								<div class="info">
-									<h3>Notifications</h3>
-									<p></p>
-								</div>
-							</li>
-							<li name="www">
-								<div class="info">
-									<h3>Personalisation</h3>
-									<p></p>
-								</div>
-							</li>
-						</ul>
-						<div class="module-info">
-							
-						</div>
-					</div>
-					<div class="col col-md-5 col-text">
-						<div class="inner">
-							<h2>Un kit complet au service de votre projet</h2>
-							<p class="lead">
-                                Kitizen vous propose un ensemble de modules à combiner selon vos besoins pour construire votre projet participatif.
-							</p>
-						</div>
-					</div>
-				</div>
-			</article>
-			<article name="footer" class="page page-footer">
-				<div class="cols container-fluid count-2">
-					<div class="col col-md-6 col-jobs text-center">
-						<ul>
-							<li class="ecobalade"><a href="http://www.ecoBalade.fr">Ecobalade</a></li>
-							<li class="sauvages"><a href="http://www.sauvagesdepaca.fr">Sauvages</a></li>
-							<li class="biolit"><a href="http://www.biolit.fr">Biolit</a></li>
-							<li class="meol"><a href="http://www.natural-solutions.eu/biodiversity-game.fr">MEOL</a></li>
-						</ul>
-						<div>
-							<span class="lead">Une réalisation de <a href="http://www.natural-solutions.eu">Natural Solutions</a></span>
-                           
-						</div>
-						<div class="text-center">
-							<!-- Go to www.addthis.com/dashboard to customize your tools -->
-							<div class="addthis_sharing_toolbox"></div>
-						</div>
-					</div>
-					<div class="col col-md-5 col-text">
-						<div class="inner">
-							<p class="lead">
-								Besoin d’aide ? Nous pouvons vous aider à concevoir et developper vos projets sur mesure. Contactez-nous et dites-nous comment nous pouvons vous aider.
-							</p>
-						</div>
-					</div>
-				</div>
-				<footer class="clearfix hidden-xs text-center">
-					© Natural Solutions 2015
-				</footer>
-				<!-- <a class="btn btn-cta" href="#">Nous contacter</a> -->
-			</article>
-		</div>
-
-		<a id="btn-cta" class="btn" href="mailto:contact@kitizen.org?subject=J'adore kitizen">Votre projet</a>
-
-		<aside id="dots" class="hidden-xs">
-			<ul class="list-unstyled">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</aside>
-
-		<div id="kzman" class="hidden-xs">
-			<div class="triangle"></div>
-			<div class="round"></div>
-		</div>
-
-		<div class="btn btn-pagination down hidden-xs"></div>
-
-		<footer class="clearfix visible-xs text-center">
-			© Natural Solutions 2015
-		</footer>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				var app = new kitizen.App({
-					firstSlide: 0
-				});
-			});
-		</script>
-		<!-- Go to www.addthis.com/dashboard to customize your tools -->
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528b30ee78f93aee" async="async">
-		</script>
-	</body>
 </html>
