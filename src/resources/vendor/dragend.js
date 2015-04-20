@@ -272,9 +272,11 @@
       // Give the DOM some time to update ...
       setTimeout( proxy(function() {
           this.updateInstance( settings );
-          if (!this.settings.preventDrag) {
+          //VB
+          /*if (!this.settings.preventDrag) {
             this._observe();
-          }
+          }*/
+          this._observe();
           this.settings.afterInitialize.call(this);
       }, this), 10 );
 
@@ -367,7 +369,9 @@
           addEventListener(doc.body, "keydown", this._onKeydown);
         }
 
-        addEventListener(win, "resize", this._sizePages);
+        //VB
+        if ( this.settings.preventDrag )
+          addEventListener(win, "resize", this._sizePages);
 
       },
 

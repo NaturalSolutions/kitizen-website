@@ -312,8 +312,11 @@ html.mobile #pages .page-homepage .col-img img {
     position: absolute !important;
     right: 50% !important;
     bottom: -250px !important;
-    left: 20px !important;
-    height: 800px !important;
+    -webkit-transform: scale(1) !important;
+    -moz-transform: scale(1) !important;
+    transform: scale(1) !important;
+    /*left: 20px !important;
+    height: 800px !important;*/
 }
 
 html.mobile #Stage {
@@ -639,6 +642,8 @@ ul.modules li[name=www] {
     text-align: left;
     padding: .5em 0;
 }
+
+
 /* Hight Desktop */
 
 @media (min-height: 900px) {
@@ -658,6 +663,22 @@ ul.modules li[name=www] {
         bottom: -100px !important;
     }
 }
+
+
+/* Small Desktop */
+
+@media (max-height: 635px) {
+    #Stage {
+        -webkit-transform: scale(.8) !important;
+        -moz-transform: scale(.8) !important;
+        transform: scale(.8) !important;
+        -wbkit-transform-origin: 50% 80% !important;
+        -moz-transform-origin: 50% 80% !important;
+        transform-origin: 50% 80% !important;
+    }
+}
+
+
 /* Tablet Vertical */
 
 @media (max-width: 991px) {
