@@ -33,9 +33,11 @@ kitizen.App = function(config)
 	self.initDragend = function()
 	{
 		self.$pagesContainer.addClass('initializing');
+		var detect = !self.md.mobile() ? true : false;
 		self.$pagesContainer.dragend({
 			pageClass: 'page',
 			direction: 'vertical',
+			preventDrag: detect,
 			keyboardNavigation: true,
 			afterInitialize: function() {
                 self.onDragendInit();
@@ -59,9 +61,18 @@ kitizen.App = function(config)
 			var $me = $(this);
 			self.dragend.scrollToPage($me.index()+1);
 		});
-
-		//TODO Mousewheel
-		// !!! Debounce it
+		//Add jquery mouseWheel
+		$('body').on('mousewheel',
+			_.throttle(
+				function(event){
+					if (event.deltaY < 0){
+						self.$pagesContainer.dragend('up');
+					}else{
+						self.$pagesContainer.dragend('down');
+					}
+					self.positionY = event.deltaY;
+				},1000)
+			);
 	};
 
 	self.onDragendInit = function()
