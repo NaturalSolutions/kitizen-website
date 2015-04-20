@@ -315,6 +315,7 @@ html.mobile #pages .page-homepage .col-img img {
     -webkit-transform: scale(1) !important;
     -moz-transform: scale(1) !important;
     transform: scale(1) !important;
+    margin-right: 90px;
     /*left: 20px !important;
     height: 800px !important;*/
 }
@@ -666,6 +667,17 @@ ul.modules li[name=www] {
 
 
 /* Small Desktop */
+
+@media (max-width: 1360px) {
+    #Stage {
+        -webkit-transform: scale(.9) !important;
+        -moz-transform: scale(.9) !important;
+        transform: scale(.9) !important;
+        -wbkit-transform-origin: 100% 100% !important;
+        -moz-transform-origin: 100% 100% !important;
+        transform-origin: 100% 100% !important;
+    }
+}
 
 @media (max-height: 635px) {
     #Stage {

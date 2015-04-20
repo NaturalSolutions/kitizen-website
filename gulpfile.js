@@ -25,7 +25,7 @@ var gulp = require('gulp');
 
 var del = require('del');
 gulp.task('clean', function (cb) {
-    del(['web'], cb);
+    del(['www'], cb);
 });
 
 /*
@@ -41,13 +41,31 @@ var minifyCss = require('gulp-minify-css');
 gulp.task('usemin', function () {
     return gulp.src('src/*.html')
         .pipe(usemin({
-            css: [minifyCss(), replace(/\.\.\/img/g, 'img'), 'concat'], // fix relative img path on-the-fly
+            css: [minifyCss(), replace(/\.\.\//g, './resources/'), 'concat'], // fix relative img path on-the-fly
             html: [minifyHtml({empty: true})],
             js1: [uglify()],
-            js2: [uglify()] // FIXME: ne peut-on pas utiliser simplement 2 fois le même pipeline ? c'est nul...
+            //js2: [uglify()] // FIXME: ne peut-on pas utiliser simplement 2 fois le même pipeline ? c'est nul...
         }))
-        .pipe(gulp.dest('web/'));
+        .pipe(gulp.dest('www/'));
 });
+
+gulp.task('cpanimation', function() {
+    return gulp.src(['src/resources/animation/**/*']).pipe(gulp.dest('www/resources/animation'));
+});
+
+gulp.task('cpanimationjs', function() {
+    return gulp.src(['src/animation_homepage_edge.js']).pipe(gulp.dest('www'));
+});
+
+gulp.task('cpimages', function() {
+    return gulp.src(['src/resources/images/**/*']).pipe(gulp.dest('www/resources/images'));
+});
+
+gulp.task('cpfonts', function() {
+    return gulp.src(['src/resources/fonts/**/*']).pipe(gulp.dest('www/resources/fonts'));
+});
+
+gulp.task('copy', ['cpanimation', 'cpimages', 'cpfonts', 'cpanimationjs']);
 
 /*
  * Image optimizations
@@ -63,7 +81,7 @@ gulp.task('imagemin1', function () {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('web/'));
+        .pipe(gulp.dest('www/'));
 });
 
 gulp.task('imagemin2', function () {
@@ -73,7 +91,7 @@ gulp.task('imagemin2', function () {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('web/img/'));
+        .pipe(gulp.dest('www/img/'));
 });
 
 gulp.task('imagemin', ['imagemin1', 'imagemin2']);
@@ -85,6 +103,6 @@ gulp.task('imagemin', ['imagemin1', 'imagemin2']);
 var runSequence = require('run-sequence');
 
 gulp.task('build', function() {
-    runSequence('clean', ['usemin', 'imagemin']);
+    runSequence('clean', ['usemin', 'copy']);//, 'imagemin'
 });
 gulp.task('default', ['build']);
